@@ -1,0 +1,57 @@
+<ion-icon *ngIf="!options" [ngClass]="iconclass" color="primary" name="finger-print" (click)="startEnrollment()"></ion-icon>
+<!--<ion-icon *ngIf="!options && validContent" [ngClass]="iconclass" color="primary" name="checkmark-circle-outline" (click)="startEnrollment()"></ion-icon>-->
+
+<ion-row *ngIf="options">
+  <ion-col [size]="showLeft && showRight ? '6': '12'" *ngIf="showLeft">
+    <ion-text class="hand-text"><ion-checkbox class="hand-check" color="primary" [(ngModel)]="left_check" (ngModelChange)="leftCheckChange()" mode="ios" *ngIf="!swichable"></ion-checkbox><ion-badge mode="ios" *ngIf="swichable" color="primary" (click)="swich()"><ion-icon class="hand-check" name="swap"></ion-icon></ion-badge> Mano izquierda</ion-text>
+    <ion-list>
+      <ion-item *ngIf="control.left_index.show">
+        <ion-label>{{ control.left_index.name }}</ion-label>
+        <ion-toggle mode="ios" [disabled]="!left_check" [(ngModel)]="control.left_index.active"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="control.left_middle.show">
+        <ion-label>{{ control.left_middle.name }}</ion-label>
+        <ion-toggle mode="ios" [disabled]="!left_check" [(ngModel)]="control.left_middle.active"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="control.left_ring.show">
+        <ion-label>{{ control.left_ring.name }}</ion-label>
+        <ion-toggle mode="ios" [disabled]="!left_check" [(ngModel)]="control.left_ring.active"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="control.left_pinky.show">
+        <ion-label>{{ control.left_pinky.name }}</ion-label>
+        <ion-toggle mode="ios" [disabled]="!left_check" [(ngModel)]="control.left_pinky.active"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+  <ion-col [size]="showLeft && showRight ? '6': '12'" *ngIf="showRight">
+    <ion-text class="right hand-text">Mano derecha <ion-checkbox class="hand-check" color="primary" [(ngModel)]="right_check" (ngModelChange)="rightCheckChange()" mode="ios" *ngIf="!swichable"></ion-checkbox><ion-badge mode="ios" *ngIf="swichable" color="primary" (click)="swich()"><ion-icon class="hand-check" name="swap"></ion-icon></ion-badge></ion-text>
+    <ion-list>
+      <ion-item *ngIf="control.right_index.show">
+        <ion-toggle mode="ios" [disabled]="!right_check" [(ngModel)]="control.right_index.active" class="inverse"></ion-toggle>
+        <ion-label class="right">{{ control.right_index.name }}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="control.right_middle.show">
+        <ion-toggle mode="ios" [disabled]="!right_check" [(ngModel)]="control.right_middle.active" class="inverse"></ion-toggle>
+        <ion-label class="right">{{ control.right_middle.name }}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="control.right_ring.show">
+        <ion-toggle mode="ios" [disabled]="!right_check" [(ngModel)]="control.right_ring.active" class="inverse"></ion-toggle>
+        <ion-label class="right">{{ control.right_ring.name }}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="control.right_pinky.show">
+        <ion-toggle mode="ios" [disabled]="!right_check" [(ngModel)]="control.right_pinky.active" class="inverse"></ion-toggle>
+        <ion-label class="right">{{ control.right_pinky.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+</ion-row>
+<ion-fab *ngIf="!options" horizontal="end">
+  <ion-fab-button color="primary" (click)="showOptions()" mode="ios" size="small">
+    <ion-icon name="more"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-fab *ngIf="options" horizontal="end">
+  <ion-fab-button color="primary" (click)="saveOptions()" mode="ios" size="small">
+    <ion-icon name="save"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

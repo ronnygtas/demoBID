@@ -1,0 +1,112 @@
+.center{
+    text-align: center;
+}
+
+.idof{
+    width: 100%;
+    border-width: 1.5px;
+    border-style: dashed;
+    border-color: #a0a0a0;
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+ion-button{
+    font-size: 2vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.button{
+    position: relative;
+    float: right;
+}
+
+.left{
+    text-align: left;
+}
+
+h3{
+    padding-left: 2vw;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.camera{
+    position: absolute;
+    height: 4vh;
+    z-index: 1500;
+}
+
+.folder{
+    position: absolute;
+    top: 5vh;
+    right: 0vw;
+    height: 4vh;
+    z-index: 1500;
+}
+
+.image-container{
+    z-index: 1000;
+}
+
+.image{}
+
+.custom-file-input{
+    position: absolute;
+    width: 15vw;
+    height: 5vh;
+    opacity: 0;
+    top: 7vh;
+    right: 1vw;
+    z-index: 1600;
+}
+
+.badge-icon{
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    z-index: 1500;
+}
+
+.cancel{
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    height: 5vh;
+    z-index: 1600;
+    width: 15vw;
+}
+
+.position1{
+    top: 1vh;
+    left: 1vw;
+}
+
+.position2{
+    top: 1vh;
+    right: 1vw;
+}
+
+.position3{
+    bottom: 1vh;
+    right: 1vw;
+}
+
+.position4{
+    bottom: 1vh;
+    left: 1vw;
+}
+
+.message{
+    position: absolute;
+    bottom: 1vh;
+    z-index: 1500;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}

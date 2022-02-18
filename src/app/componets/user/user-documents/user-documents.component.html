@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h2>Contrato</h2></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <div class="main center">
+            <div class="doc">
+              <ion-icon class="doc-icon" name="document" value="AMIGO" (click)="reedValue($event)"></ion-icon>
+              <div class="text">Contrato</div>
+            </div>
+          </div>
+          <ion-button expand="block" (click)="firma_autografa()">Firma autografa</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

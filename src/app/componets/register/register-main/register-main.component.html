@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logo"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-loading></app-loading>
+  <div class="center">
+    <h4>Registro</h4><br>
+    <ion-item lines="none">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="data.usuario" class="custom_input">
+            <ion-icon name="contact" color="primary"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+        </ion-input>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="data.contrasena" class="custom_input">
+            <ion-icon name="key" color="primary"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+        </ion-input>
+    </ion-item>
+    <br>
+    <ion-button (click)="login()">
+        <ion-icon slot="end" class="fingerButtonIcon" name="log-in"></ion-icon>
+        Ingresar
+    </ion-button>
+  </div>
+</ion-content>
+  

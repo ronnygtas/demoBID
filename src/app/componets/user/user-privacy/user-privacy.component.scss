@@ -1,0 +1,29 @@
+.div_aviso_privacidad{
+    background: white;
+    border: 1px solid;
+    border-color: rgb(216, 223, 227);
+    border-radius: 5px;
+    font-family: 'leelawd';
+    color: rgb(84, 110, 122);
+}
+
+.vertical_aling{
+    vertical-align: middle;
+}
+
+.size_img_logo{
+    width: 110px;
+}
+
+.style_button_1{
+    background: transparent;
+    font-size: 13px;
+}
+
+button.style_button_1:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+.style_col_term {
+    position: absolute;
+}

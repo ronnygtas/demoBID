@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.miteksystems.FacialBidMitek" 
+version="0.0.1" 
+xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+xmlns:android="http://schemas.android.com/apk/res/android">
+<name>FacialBidMitek</name>
+    <js-module src="www/FacialBidMitek.js" name="FacialBidMitek">
+        <clobbers target="FacialBidMitek" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="FacialBidMitek">
+            <param name="android-package" value="com.miteksystems.FacialBidMitek" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+    <source-file src="src/android/FacialBidMitek.java" target-dir="src/com/miteksystems" />
+    <source-file src="src/android/ParameterOverrides.java" target-dir="src/com/miteksystems" />
+
+        <framework src="src/android/FacialBidMitek.gradle" custom="true" type="gradleReference" />
+
+        <resource-file src="src/android/api-release.aar" target="libs/api-release.aar"/> 
+
+        <!-- 
+        facialcapturescience, 
+        facialcapturesciencedepcrypto-release, 
+        facialcapturesciencedepface-release, 
+        facialcapturesciencedepliveness-release, 
+        facialcaptureworkflow, 
+
+        api-release,
+        misnapcamera-release, 
+        imageutils-release, mibidata-release,
+        sanselan-release -->
+
+        <!-- Faciales -->
+        <resource-file src="src/android/facialcapturecontroller-release.aar" target="libs/facialcapturecontroller-release.aar"/> 
+        <resource-file src="src/android/facialcapturescience-release.aar" target="libs/facialcapturescience-release.aar"/> 
+        <resource-file src="src/android/facialcapturesciencecrypto-release.aar" target="libs/facialcapturesciencecrypto-release.aar"/> 
+        <resource-file src="src/android/facialcapturescienceface-release.aar" target="libs/facialcapturescienceface-release.aar"/> 
+        <resource-file src="src/android/facialcaptureworkflow-release.aar" target="libs/facialcaptureworkflow-release.aar"/> 
+        <resource-file src="src/android/facialcapturescienceliveness-release.aar" target="libs/facialcapturescienceliveness-release.aar"/> 
+        <!-- Utilidaddes -->
+        <resource-file src="src/android/api-release.aar" target="libs/api-release.aar"/> 
+        <resource-file src="src/android/imageutils-release.aar" target="libs/imageutils-release.aar"/> 
+        <resource-file src="src/android/mibidata-release.aar" target="libs/mibidata-release.aar"/> 
+        <resource-file src="src/android/misnapcamera-release.aar" target="libs/misnapcamera-release.aar"/>
+        <resource-file src="src/android/sanselan-release.aar" target="libs/sanselan-release.aar"/>
+
+
+
+        </platform>
+</plugin>

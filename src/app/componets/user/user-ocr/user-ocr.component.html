@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h1>Datos de usuario</h1></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input [(ngModel)]="data.nombre" (ngModelChange)="data.nombre = data.nombre.toUpperCase()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Apellido paterno</ion-label>
+            <ion-input [(ngModel)]="data.aPaterno" (ngModelChange)="data.aPaterno = data.aPaterno.toUpperCase()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Apellido materno</ion-label>
+            <ion-input [(ngModel)]="data.aMaterno" (ngModelChange)="data.aMaterno = data.aMaterno.toUpperCase()"></ion-input>
+          </ion-item>
+          <!--<ion-item>
+            <ion-label position="floating">Año de registro</ion-label>
+            <ion-datetime mode="ios" cancelText="Cancelar" doneText="OK" [(ngModel)]="data.registro" display-format="YYYY"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Emisión</ion-label>
+            <ion-datetime mode="ios" cancelText="Cancelar" doneText="OK" [(ngModel)]="data.emision" display-format="YYYY"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Clave de elector</ion-label>
+            <ion-input [(ngModel)]="data.claveElector" (ngModelChange)="data.claveElector = data.claveElector.toUpperCase()"></ion-input>
+          </ion-item>-->
+          <ion-item>
+            <ion-label position="floating"><ion-badge *ngIf="!data.vCurp" mode="ios" color="danger"><ion-icon name="close"></ion-icon></ion-badge> CURP</ion-label>
+            <ion-input [(ngModel)]="data.curp" (ngModelChange)="data.validCurp()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><ion-badge *ngIf="!data.vRFC" mode="ios" color="danger"><ion-icon name="close"></ion-icon></ion-badge> RFC</ion-label>
+            <ion-input [(ngModel)]="data.rfc" (ngModelChange)="data.validRFC()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">OCR</ion-label>
+            <ion-input [(ngModel)]="data.ocr" (ngModelChange)="data.ocr = data.ocr.toUpperCase()"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h1>Dirección de usuario</h1></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Calle</ion-label>
+            <ion-input type="text" [(ngModel)]="dataAdress.calle" (ngModelChange)="dataAdress.calle = dataAdress.calle.toUpperCase()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">CP</ion-label>
+            <ion-input type="number" [(ngModel)]="dataAdress.cp"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Número Ext.</ion-label>
+            <ion-input type="numero" [(ngModel)]="dataAdress.numExt" (ngModelChange)="dataAdress.numExt = dataAdress.numExt.toUpperCase()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Número Int.</ion-label>
+            <ion-input type="numero" [(ngModel)]="dataAdress.numInt" (ngModelChange)="dataAdress.numInt = dataAdress.numInt.toUpperCase()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">País</ion-label>
+            <!--<ion-select mode="ios" disabled="true" placeholder="Pais" cancelText="Cancelar" [(ngModel)]="dataAdress.pais" (ngModelChange)="cat_state()">
+              <ion-select-option *ngFor="let country of countrys" [value]="country.value">{{ country.name }}</ion-select-option>
+            </ion-select>-->
+            <ion-input type="text" [(ngModel)]="dataAdress.paisS"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Estado</ion-label>
+            <!--<ion-select mode="ios" placeholder="Estado" cancelText="Cancelar" [(ngModel)]="dataAdress.estado" (ngModelChange)="cat_city()">
+              <ion-select-option *ngFor="let state of states" [value]="state.value">{{ state.name }}</ion-select-option>
+            </ion-select>-->
+            <ion-input type="text" [(ngModel)]="dataAdress.estadoS"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Ciudad</ion-label>
+            <!--<ion-select mode="ios" placeholder="Estado" cancelText="Cancelar" [(ngModel)]="dataAdress.ciudad" (ngModelChange)="cat_town()">
+              <ion-select-option *ngFor="let city of citys" [value]="city.value">{{ city.name }}</ion-select-option>
+            </ion-select>-->
+            <ion-input type="text" [(ngModel)]="dataAdress.ciudadS"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Colonia</ion-label>
+            <!--<ion-select mode="ios" placeholder="Estado" cancelText="Cancelar" [(ngModel)]="dataAdress.delegacion">
+              <ion-select-option *ngFor="let town of towns" [value]="town.value">{{ town.name }}</ion-select-option>
+            </ion-select>-->
+            <ion-input type="text" [(ngModel)]="dataAdress.coloniaS"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" (click)="saveOCR()">Continuar</ion-button>
+  </div>
+</ion-content>

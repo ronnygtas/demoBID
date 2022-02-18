@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div class="center">
+    <ion-text color="dark" class="center">
+      <h1>Enrolamiento facial</h1>
+    </ion-text>
+    <div *ngIf="face.length > 0">
+      <ion-img class="image" [src]="'data:image/jpeg;base64,' + face"></ion-img>
+    </div>
+    <div *ngIf="face.length <= 0">
+      <ion-img class="enrollment-iconFace" color="secondary" [src]="selfie" (click)="facialCapture()"></ion-img>
+    </div>
+  </div>
+</ion-content>

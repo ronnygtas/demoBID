@@ -1,0 +1,15 @@
+<!-- Actions -->
+
+<ion-fab *ngIf="undo" vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="clearCanvas()">
+    <ion-icon name="undo"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="saveImage()">
+    <ion-icon name="checkmark"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<canvas #myCanvas (touchstart)="handleStart($event)" (touchmove)="handleMove($event)"></canvas>

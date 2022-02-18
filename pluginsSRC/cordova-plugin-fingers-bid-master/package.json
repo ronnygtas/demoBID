@@ -1,0 +1,22 @@
+{
+  "name": "FingersBidEnrollment",
+  "version": "0.3.3",
+  "description": "A plugin for adding the Karalundi finger enroll SDK to a Cordova application ",
+  "cordova": {
+    "id": "com.teknei.bid.FingersBidEnrollment",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "karalundi",
+    "sdk",
+    "login",
+    "authentication",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "rgarcia",
+  "license": "ISC"
+}

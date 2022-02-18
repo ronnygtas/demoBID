@@ -1,0 +1,103 @@
+export const environment = {
+    production: true,
+    debug: false,
+  
+    // credentials
+  user: 'demo',
+  password: 'password',
+  encoded: 'dXNlcmFwcDpwYXNzd29yZA==',
+
+  // logo
+  logo: '/assets/logo_BID.png', 
+  logo_light: '/assets/logo_blanco_2.png',
+  logo_blanco: '/assets/logo_blanco_2.png',
+  logo_face: '/assets/Selfie_Bio.png',
+  logo_carga: '/assets/loading_BID_2.gif',
+  ocr_timeout: 2000,
+
+
+
+  // urls
+  // servicesURL: 'http://apidev.buroidentidad.com',
+  servicesURL: 'http://apiqa.buroidentidad.com',
+
+  // codes
+  okCode: -9999,
+  appPermission: 1,
+  mexico_id: 127,
+  cdmx_id: 9,
+  map_key: 'AIzaSyDVbHKUNntc-jWtK5yfU69Ve0zgxRyLjAw',
+
+  // servicios
+  authService: ':8083/uaa/oauth/token',
+  loginService: ':9419/bid/rest/v1/login',
+  catProducts: ':9417/bid/rest/v1/product/getProducts',
+  catAgreement: ':9414/bid/rest/v1/agreements/assignProduct?idProduct=',
+  catNombraminento: ':9414/bid/rest/v1/amount/listAmount?idAgreement=',
+  allTerms: ':9414/bid/rest/v1/formulas/allTerms?idAgreement=',
+  allAmmounts: ':9414/bid/rest/v1/formulas/allAmounts?idAgreement=',
+  ocr: ':9411/bid/rest/v1/enrollment/ocr/document',
+  saveDoc: ':9411/bid/rest/v1/documents/upload',
+  enrrolFingers: ':9420/bid/fingerEnrollment/enrollment',
+  updatePerson: ':9436/bid/rest/v1/people/upload',
+  queryIne: ':9429/bid/rest/v1/ine/validation',
+  identifyEnroll: ':9420/bid/fingerIdentification/identify',
+  ocr_cd: ':9411/bid/rest/v1/enrollment/ocr/cd',
+  save_credit: ':9414/bid/rest/v1/credit/',
+  save_references: ':9414/bid/rest/v1/reference/',
+  cat_country: ':9415/bid/rest/v1/catalogues/selector?value=country',
+  cat_state: ':9415/bid/rest/v1/catalogues/selector?value=state',
+  cat_city: ':9415/bid/rest/v1/catalogues/selector?value=city&filter=',
+  cat_town: ':9415/bid/rest/v1/catalogues/selector?value=town&filter=',
+  operation_create: ':9411/bid/rest/v1/operations',
+  save_doc_resp: ':9431/bid/rest/v1/files/images',
+  face_serv: ':9423/bid/rest/v1/enrollment/facial',
+  curp_validate: ':9426/bid/rest/v1/renapo/napi/curp',
+  otpGenerate: ':9430/bid/rest/v1/notification/otp/generate',
+  otpValidate: ':9430/bid/rest/v1/notification/otp/validate',
+  generateDoc: ':9424/bid/rest/v1/contracts/getContract',
+  fingerVerify: ':9420/bid/finger/verify',
+  face_compare: '9423/bid/rest/v1/facial/recognition',
+  direction_serv: 'https://us-central1-bid-general.cloudfunctions.net/DireccionCompleta',
+  
+  // storage
+  token: 'auth_token',
+  session: 'session_data',
+  client: 'client_data',
+  credit: 'credit_data',
+  fingers: 'fingers_data',
+  operation: 'operation_data',
+  person: 'person_data',
+  agente: 'agent_data',
+  leftIndex: 'leftIndex',
+  rightIndex: 'rightIndex',
+  dataOcr: 'dataPerson',
+  newClient: 'newClient',
+  operationClient: 'operationClient',
+  person_adress: 'person_adress',
+  product: 'selected_product',
+  agreement: 'selected_agreement',
+  appointment: 'selected_appointment',
+  dataClient: 'datosCliente',
+  leftFingersC: 'leftFingersC',
+  rightFingersC: 'rightFingersC',
+  fingers_storage: 'fingers_storage',
+  face_storage: 'face_storage',
+  same_adress: 'same_adress',
+  hand: 'hand_storage',
+  right_valid: 'right_valid',
+  kyc: 'kyc',
+  telefono: 'telefono',
+  email: 'email',
+  pdfDoc: 'pdfDoc',
+  firmaAuth: 'firmaAuth',
+  firmaBio: 'firmaBio',
+  front_id: 'front_id_image',
+  id_kind: 'id_kind_image',
+  enroll: 'enroll',
+  left_valid: 'left_valid',
+
+  pol_title: 'Aviso de Privacidad',
+  pol_cont: '<p><b>Constancia de puesta a disposición del Aviso de Privacidad</b></p><p><b>(Confidencialidad y Privacidad de la información y datos personales)</b></p>  <p>"BURÓ IDENTIDAD" S.A. DE C.V. ("BID"), con domicilio en calle Aristóteles, número 210, Colonia Polanco, Código   Postal 11150, Ciudad de México, México, utilizará sus datos personales recabados para poder iniciar el proceso de análisis de viabilidad crediticia y financiera, para lo cual   es necesario que nos proporcione ciertos datos personales, financieros y patrimoniales que pudieran ser considerados datos sensibles, por lo que, por este medio   OTORGO MI CONSENTIMIENTO a "BURÓ DE IDENTIDAD", S.A. de C.V., así como sus subsidiarias, afiliadas, controladora y demás empresas   relacionadas (en lo sucesivo “BID”) para realizar el tratamiento de los datos personales y datos personales sensibles proporcionados, conforme a los términos   establecidos en el "Aviso de Privacidad Integral" ("API"), el cual se me ha puesto a disposición en cuanto a su contenido íntegro, indicándome que puede ser consultado a   través de la página de internet www.bid.com.mx. Igualmente, otorgo mi consentimiento expreso a "BID" para que los datos personales y datos personales   sensibles proporcionados, puedan ser compartidos para el único efecto de la realización de procedimientos de seguimiento y administración del producto o servicio   solicitado, consultas de historial crediticio, autenticación de identidad, procesos de verificación por entidades externas y autoridades y registros públicos entre otras   autoridades, para integrar debidamente la presente solicitud. Para mayor información acerca del tratamiento y de los derechos que pueden hacer valer, puede accesar al   "API" a través de la página de Internet antes referida o contactar al Departamento Especializado de Datos Personales al correo electrónico siguiente:   biddatospersonales@buroidentidad.com, en donde podrán atender sus solicitudes y ejercer sus derechos ARCO.   </p>'
+};
+  

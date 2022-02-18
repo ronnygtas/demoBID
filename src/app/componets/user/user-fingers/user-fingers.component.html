@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div class="center">
+    <h1>Verificación de huellas</h1>
+    <app-enrollment [icon-class]="'enrollment-icon'" [right]="false" [swichable]="true" (onBoth)="both($event)" (onLeft)="left($event)" (onRight)="right($event)"></app-enrollment>
+  </div>
+</ion-content>

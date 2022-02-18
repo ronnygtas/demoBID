@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div class="ion-padding">
+    <h3 class="center">Verificación de extracción de datos</h3>
+    <hr>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="data.nombre" (ngModelChange)="data.nombre = data.nombre.toUpperCase()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido paterno</ion-label>
+        <ion-input [(ngModel)]="data.aPaterno" (ngModelChange)="data.aPaterno = data.aPaterno.toUpperCase()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido materno</ion-label>
+        <ion-input [(ngModel)]="data.aMaterno" (ngModelChange)="data.aMaterno = data.aMaterno.toUpperCase()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Año de registro</ion-label>
+        <ion-datetime mode="ios" cancelText="Cancelar" doneText="OK" [(ngModel)]="data.registro" display-format="YYYY"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Emisión</ion-label>
+        <ion-datetime mode="ios" cancelText="Cancelar" doneText="OK" [(ngModel)]="data.emision" display-format="YYYY"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Clave de elector</ion-label>
+        <ion-input [(ngModel)]="data.claveElector" (ngModelChange)="data.claveElector = data.claveElector.toUpperCase()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"><ion-badge *ngIf="!data.vCurp" mode="ios" color="danger"><ion-icon name="close"></ion-icon></ion-badge> CURP</ion-label>
+        <ion-input [(ngModel)]="data.curp" (ngModelChange)="data.validCurp()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"><ion-badge *ngIf="!data.vRFC" mode="ios" color="danger"><ion-icon name="close"></ion-icon></ion-badge> RFC</ion-label>
+        <ion-input [(ngModel)]="data.rfc" (ngModelChange)="data.validRFC()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">OCR</ion-label>
+        <ion-input [(ngModel)]="data.ocr" (ngModelChange)="data.ocr = data.ocr.toUpperCase()"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="primary" (click)="saveOCR()">Continuar</ion-button>
+  </div>
+</ion-content>

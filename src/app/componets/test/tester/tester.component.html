@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      TESTER
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content padding>
+  <div class="center">
+    <app-enrollment [icon-class]="'enrollment-icon'" [swichable]="true" [right]="false" (onLeft)="left($event)" (onRight)="right($event)"></app-enrollment>
+  </div>
+</ion-content>

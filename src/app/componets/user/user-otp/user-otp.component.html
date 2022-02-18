@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-loading></app-loading>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h2>Verificación de número telefónico</h2></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h3 class="center">Ingresa el código que se ha enviado a tu celular</h3>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Código</ion-label>
+            <ion-input type="number" [(ngModel)]="codigoOtp"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" (click)="envia_otp()">Enviar de nuevo</ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" (click)="continuar()">Continuar</ion-button>
+  </div>
+</ion-content>

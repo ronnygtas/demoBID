@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h1>Captura comprobante de domicilio</h1></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!--<ion-item>
+          <ion-label position="floating">Tipo de comprobante</ion-label>
+          <ion-select>
+            <ion-select-option value="1">CFE</ion-select-option>
+            <ion-select-option value="2">TELMEX</ion-select-option>
+            <ion-select-option value="3">IZZI</ion-select-option>
+          </ion-select>
+        </ion-item>-->
+        <app-camera [name]="cameraNames" [mitek]="false" [buttonsPosition]="2" [file]="true" (onImage)="getImage($event)"></app-camera>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" (click)="call_ocr()">Continuar</ion-button>
+  </div>
+</ion-content>

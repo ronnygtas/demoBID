@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          <h1>Captura de datos identificativos</h1>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating"><ion-badge *ngIf="!data.emailValid" mode="ios" color="danger"><ion-icon name="close"></ion-icon></ion-badge> Correo</ion-label>
+            <ion-input type="email" [(ngModel)]="data.email" (ngModelChange)="data.emailChange()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><ion-badge *ngIf="!data.numeroValid" mode="ios" color="danger"><ion-icon name="close"></ion-icon></ion-badge> Número celular</ion-label>
+            <ion-input type="number" [(ngModel)]="data.numero" (ngModelChange)="data.numeroChange()"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" (click)="continuar(); hideKey()">Continuar</ion-button>
+  </div>
+</ion-content>

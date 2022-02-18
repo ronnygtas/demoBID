@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-card color="tertiary">
+      <ion-card-header>
+        <ion-card-title><h2>
+          <ion-img class="head-logo2" [src]="logo"></ion-img>
+        </h2></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
+    <div *ngIf="terminos">Aceptados!</div>
+    <ion-button class="action" expand="block" (click)="continue()">Iniciar</ion-button>
+  </div>
+</ion-content>

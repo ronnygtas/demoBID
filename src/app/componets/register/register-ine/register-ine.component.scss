@@ -1,0 +1,89 @@
+.idof{
+    width: 100%;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #a0a0a0;
+    border-radius: 2vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    position: relative;
+    text-align: center;
+    max-height: 30vh;
+    overflow: hidden;
+
+}
+
+ion-button{
+    font-size: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.left{
+    text-align: left;
+}
+
+h3{
+    padding-left: 2vw;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.camera{
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    height: 5vh;
+    z-index: 1500;
+    width: 15vw;
+}
+
+.folder{
+    position: absolute;
+    top: 7vh;
+    right: 1vw;
+    height: 5vh;
+    z-index: 1500;
+    width: 15vw;
+}
+
+.image-container{
+    z-index: 1000;
+}
+
+.image{
+    height: 25vh;
+}
+
+.custom-file-input{
+    position: absolute;
+    width: 15vw;
+    height: 5vh;
+    opacity: 0;
+    top: 7vh;
+    right: 1vw;
+    z-index: 1600;
+}
+
+.badge-icon{
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    z-index: 1500;
+}
+
+.cancel{
+    position: absolute;
+    top: 1vh;
+    right: 1vw;
+    height: 5vh;
+    z-index: 1600;
+    width: 15vw;
+}
+
+
+ion-icon{
+    --margin: 0px;
+    --padding: 0px;
+    font-size: 8vh;
+}

@@ -1,0 +1,31 @@
+<app-loading></app-loading>
+
+<ion-content padding [fullscreen]="true" [scrollEvents]="true" class="dark-back">
+    <div class="center">
+        <ion-img class="logo" [src]="image"></ion-img>
+        <h4>Iniciar Sesión</h4><br><br>
+        <ion-item lines="none" color="tertiary">
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="data.usuario" class="custom_input">
+                <ion-icon name="contact" color="primary"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+            </ion-input>
+        </ion-item>
+        <ion-item lines="none" color="tertiary">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="data.contrasena" class="custom_input">
+                <ion-icon name="key" color="primary"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+            </ion-input>
+        </ion-item>
+        <br>
+        <app-enrollment [automatic]="false" [right]="false" [left]="true" [icon-class]="'secondary-icon'" (onLeft)="left($event)"></app-enrollment>
+        <br>
+        <ion-button class="action" (click)="login()">
+            <ion-icon slot="end" class="fingerButtonIcon" name="log-in"></ion-icon>
+            Ingresar
+        </ion-button>
+    </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="register()"><ion-icon name="person-add"></ion-icon></ion-fab-button>
+</ion-fab>

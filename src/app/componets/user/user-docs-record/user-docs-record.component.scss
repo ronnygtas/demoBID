@@ -1,0 +1,31 @@
+div.doc{
+    position: relative;
+    float: left;
+    margin: 10px;
+    font-size: 10vh;
+    padding: 0px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+div.text{
+    font-size: 2vh;
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+ion-icon.doc-icon{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: -3vh;
+    margin-top: -3vh;
+    padding-top: -3vh;
+}
+
+div.main{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}

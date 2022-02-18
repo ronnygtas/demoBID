@@ -1,0 +1,17 @@
+{
+  "name": "facialbidmitek",
+  "version": "0.0.1",
+  "description": "Componente para captura de rostros",
+  "cordova": {
+    "id": "com.miteksystems.bid",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Pablo Bacouros",
+  "license": "ISC"
+}

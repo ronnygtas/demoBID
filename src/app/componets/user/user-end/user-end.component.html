@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="center"><h1>Felicidades</h1></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h2>El proceso ha terminado correctamente</h2>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="continue()">Finalizar</ion-button>
+</ion-content>

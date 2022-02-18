@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-button (click)="back()">
+          <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+        <ion-img class="head-logo" [src]="logout"></ion-img>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <div *ngIf="buroWEB">
+    <ion-row>
+      <h2>Preguntas para la consulta de Buró de Crédito</h2>
+      <p> A considerar:</p>
+      <ul>
+        <li><p>Es muy importante que respondas de forma verídica y correcta, cualquier diferencia podría demorar tu trámite. </p></li>
+        <li><p>Tus créditos deben estar activos con un mínimo de tres meses. </p></li>
+        <li><p>Deberás dar prioridad a tus créditos bancarios al responder. </p></li>
+      </ul>
+    </ion-row>
+   <ion-row for="name"><b>¿Te han otorgado algún crédito automotriz en los últimos dos años?</b></ion-row>
+   <p class="smallSings">No consideres créditos personales</p>
+
+    <ion-row class="magin">
+    <ion-col size="5">
+        <ion-button expand="block" fill="{{fill_p1_s}}" (click)="togglePregunta1S()">
+            <ion-ripple-effect></ion-ripple-effect>SI</ion-button>
+    </ion-col> 
+    <ion-col size="5">
+        <ion-button expand="block" fill="{{fill_p1_n}}" (click)="togglePregunta1N()">
+            <ion-ripple-effect></ion-ripple-effect>NO</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row for="name"> <b>¿Tienes algún crédito hipotecario vigente?</b></ion-row>
+  <p class="smallSings">También puedes considerar infonavit</p>
+  <ion-row class="magin">
+    <ion-col size="5">
+      <ion-button expand="block" fill="{{fill_p2_s}}" (click)="togglePregunta2S()">
+        <ion-ripple-effect></ion-ripple-effect>SI</ion-button>
+    </ion-col>
+    <ion-col size="5">
+        <ion-button expand="block" fill="{{fill_p2_n}}" (click)="togglePregunta2N()">
+            <ion-ripple-effect></ion-ripple-effect>NO</ion-button>
+    </ion-col>
+  </ion-row>
+
+    <ion-row for="name"><b>¿Eres el titular de alguna tarjeta de crédito?</b></ion-row>
+    <p class="smallSings">No participan tarjetas de Débito, Nómina y Liverpool, C&A, Coppel, Bancoppel, Amex de servicios, Banco Azteca y Elektra</p>
+    <ion-row>
+    <ion-col size="5">
+        <ion-button expand="block" class="ion-margin-top" fill="{{fill_p3_s}}" (click)="togglePregunta3S()">
+            <ion-ripple-effect></ion-ripple-effect>SI</ion-button>
+    </ion-col>
+    <ion-col size="5">
+        <ion-button expand="block" class="ion-margin-top" fill="{{fill_p3_n}}" (click)="togglePregunta3N()">
+            <ion-ripple-effect></ion-ripple-effect>NO</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-list *ngIf="fag3">
+    <ion-row position="stacked"><b>Proporciona los últimos cuatro dígitos de tu tarjeta:</b></ion-row>
+    <ion-input class="custom_input" type="tel" pattern="\d*" maxlength="4" [(ngModel)]="numTarjeta"></ion-input>
+  </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="primary" class="color_button" expand="block" (click)=" validacionform3()" [disabled]="isValidoBoton">
+      <ion-ripple-effect></ion-ripple-effect>
+      CONTINUAR
+    </ion-button>
+  </ion-toolbar>
+</ion-footer> 

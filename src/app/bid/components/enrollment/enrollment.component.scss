@@ -1,0 +1,53 @@
+ion-item{
+    --padding: 0px;
+    --margin: 0px;
+}
+
+ion-list{
+    --padding: 0px;
+    --margin: 0px;
+}
+
+ion-chip{
+    width: 100%;
+}
+
+.small{
+    font-size: 4vh;
+}
+
+.big{
+    font-size: 7vh;
+}
+.noPadding{
+    padding: 0px;
+    margin: 0px;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.inverse{
+    transform: rotateY(180deg);
+}
+
+.hand-check{
+    height: 3vh;
+    width: 3vh;
+    position: relative;
+    top: 0.5vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.hand-text{
+    height: 3vh;
+    font-size: 3vh;
+    margin: 0px;
+    padding: 0px;
+}

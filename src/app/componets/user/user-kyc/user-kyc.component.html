@@ -1,0 +1,154 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h2>Conoce a tu cliente</h2></ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Es o tiene relación con una persona politicamente expuesta?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-radio-group [(ngModel)]="controls.exposed">
+            <ion-row>
+              <ion-col size="6">
+                <ion-item lines="none">
+                  <ion-label><p>SI</p></ion-label>
+                  <ion-radio mode="ios" slot="start" value="si"></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="6">
+                <ion-item lines="none">
+                  <ion-label><p>NO</p></ion-label>
+                  <ion-radio mode="ios" slot="start" value="no"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+          <ion-item *ngIf="controls.exposed == 'si'">
+            <ion-label position="floating">Nombre completo</ion-label>
+            <ion-input [(ngModel)]="controls.exposedName"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="controls.exposed == 'si'">
+            <ion-label position="floating">Cargo</ion-label>
+            <ion-input [(ngModel)]="controls.exposedCharge"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Inmuebles</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Inmuebles de su propiedad</ion-label>
+            <ion-select mode="ios" [(ngModel)]="controls.inmuebles">
+              <ion-select-option value="0">0</ion-select-option>
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+              <ion-select-option value="4">Mas de 3</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="controls.inmuebles > 0">
+            <ion-label position="floating">Valor aploximado</ion-label>
+            <ion-input type="number" [(ngModel)]="controls.inValue"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Ingresos adicionales</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-radio-group [(ngModel)]="controls.adicionales">
+            <ion-row>
+              <ion-col size="6">
+                <ion-item lines="none">
+                  <ion-label><p>SI</p></ion-label>
+                  <ion-radio mode="ios" slot="start" value="si"></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="6">
+                <ion-item lines="none">
+                  <ion-label><p>NO</p></ion-label>
+                  <ion-radio mode="ios" slot="start" value="no"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+          <ion-item *ngIf="controls.adicionales == 'si'">
+            <ion-label position="floating">Especificar</ion-label>
+            <ion-input [(ngModel)]="controls.adEsp"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="controls.adicionales == 'si'">
+            <ion-label position="floating">Neto mensual</ion-label>
+            <ion-input type="number" [(ngModel)]="controls.adNeto"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Cuenta con auto?</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-radio-group [(ngModel)]="controls.auto">
+            <ion-row>
+              <ion-col size="6">
+                <ion-item lines="none">
+                  <ion-label><p>SI</p></ion-label>
+                  <ion-radio mode="ios" slot="start" value="si"></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="6">
+                <ion-item lines="none">
+                  <ion-label><p>NO</p></ion-label>
+                  <ion-radio mode="ios" slot="start" value="no"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+          <ion-item *ngIf="controls.auto == 'si'">
+            <ion-label position="floating">Marca</ion-label>
+            <ion-input [(ngModel)]="controls.marca"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="controls.auto == 'si'">
+            <ion-label position="floating">Modelo</ion-label>
+            <ion-input [(ngModel)]="controls.modelo"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="controls.auto == 'si'">
+            <ion-label position="floating">Año</ion-label>
+            <ion-input type="number" [(ngModel)]="controls.ano"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="controls.auto == 'si'">
+            <ion-label position="floating">Valor aproximado</ion-label>
+            <ion-input type="number" [(ngModel)]="controls.valor"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" (click)="continuar()">Continuar</ion-button>
+  </div>
+</ion-content>

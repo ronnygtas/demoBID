@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-button (click)="back()">
+          <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+        <ion-img class="head-logo" [src]="logout"></ion-img>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-row>
+          <ion-col  size="12"><b>Aviso de Privacidad</b></ion-col>
+        </ion-row> 
+      <ion-row>
+          <div class="div_aviso_privacidad ion-text-justify" padding>
+              <p><b>Constancia de puesta a disposición del Aviso de Privacidad</b></p>
+               <p><b>(Confidencialidad y Privacidad de la información y datos personales)</b></p>  
+               <p>"BURÓ IDENTIDAD" S.A. DE C.V. ("BID"), con domicilio en calle Aristóteles, número 210, Colonia Polanco, Código
+                  Postal 11150, Ciudad de México, México, utilizará sus datos personales recabados para poder iniciar el proceso de análisis de viabilidad crediticia y financiera, para lo cual
+                  es necesario que nos proporcione ciertos datos personales, financieros y patrimoniales que pudieran ser considerados datos sensibles, por lo que, por este medio
+                  OTORGO MI CONSENTIMIENTO a "BURÓ DE IDENTIDAD", S.A. de C.V., así como sus subsidiarias, afiliadas, controladora y demás empresas
+                  relacionadas (en lo sucesivo “BID”) para realizar el tratamiento de los datos personales y datos personales sensibles proporcionados, conforme a los términos
+                  establecidos en el "Aviso de Privacidad Integral" ("API"), el cual se me ha puesto a disposición en cuanto a su contenido íntegro, indicándome que puede ser consultado a
+                  través de la página de internet www.bid.com.mx. Igualmente, otorgo mi consentimiento expreso a "BID" para que los datos personales y datos personales
+                  sensibles proporcionados, puedan ser compartidos para el único efecto de la realización de procedimientos de seguimiento y administración del producto o servicio
+                  solicitado, consultas de historial crediticio, autenticación de identidad, procesos de verificación por entidades externas y autoridades y registros públicos entre otras
+                  autoridades, para integrar debidamente la presente solicitud. Para mayor información acerca del tratamiento y de los derechos que pueden hacer valer, puede accesar al
+                  "API" a través de la página de Internet antes referida o contactar al Departamento Especializado de Datos Personales al correo electrónico siguiente:
+                  biddatospersonales@buroidentidad.com, en donde podrán atender sus solicitudes y ejercer sus derechos ARCO.
+                  </p>
+            </div>
+      </ion-row>  
+      <ion-row>
+          <ion-col size="12" class="style_col_term">
+              <ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="isChecked" (ionChange)="aceptarAvisoProvacidad()"></ion-checkbox><span class="font_size_p"><button class="style_button_1" (click)="clickAceptarAvisoProvacidad()">*He leído y acepto el aviso de privacidad. </button> </span> 
+  <!--           <ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="isChecked" (ionChange)="aceptarAvisoProvacidad()"></ion-checkbox><span class="font_size_p" (click)="clickAceptarAvisoProvacidad()"> *He leído y acepto los términos de las </span><a class="font_size_a">Politicas de Privacidad</a>  -->
+          </ion-col>
+        </ion-row>
+  
+        
+  </ion-content>
+  <ion-footer>
+      <ion-toolbar>
+          <ion-button color="primary" class="color_button" expand="block" (click)="goUserDocuments()" [disabled]="isValido">
+              <ion-ripple-effect></ion-ripple-effect>
+              Siguiente
+            </ion-button>
+      </ion-toolbar>
+    </ion-footer> 

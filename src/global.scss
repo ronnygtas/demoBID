@@ -1,0 +1,134 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.dark-back{
+    --background-color: #fff;
+    --color: #303030;
+}
+
+.primary-back{
+    --background-color: #0D96F5;
+    --color: #fff;
+}
+
+.secondary-back{
+    --background-color: #276bd0;
+    --color: #fff;
+}
+
+.dark-color{
+    --color: #303030;
+}
+
+.primary-color{
+    --color: #0D96F5;
+}
+
+.secondary-color{
+    --color: #276bd0;
+}
+
+ion-content.dark-back{
+    --background: #fff;
+    --color: #303030;
+}
+
+.center{
+    text-align: center;
+}
+
+ion-button{
+    font-size: 22px;
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+ion-button.icon-only{
+    font-size: 40px;
+    height: 50px;
+    padding: 0px;
+}
+
+.head-logo{
+    margin-left: 60px;
+    height: 7vh;
+    position: relative;
+    // margin: 0px;
+}
+
+.head-logo2{
+    margin-left: 0px;
+    height: 17vh;
+    position: relative;
+    // margin: 0px;
+}
+
+ion-title{
+    padding: 0px;
+    margin-left: 30vw;
+}
+
+.custom_input{
+    border-bottom: 2px solid #0D96F5;
+    text-align: left;
+    font-size: 20px;
+}
+
+ion-label{
+    margin-left: 30px;
+}
+
+.enrollment-icon{
+    font-size: 25vh;
+}
+
+.enrollment-iconFace{
+    width: 200px;
+    margin: auto;
+}
+
+.options-icon{
+    font-size: 7vh;
+}
+
+.secondary-icon{
+    font-size: 10vh;
+}
+
+.right{
+    text-align: right;
+}
+
+ion-list{
+    background-color: transparent;
+}
+
+ion-item{
+    background-color: transparent;
+}

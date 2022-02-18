@@ -1,0 +1,7 @@
+{
+  "name": "demoBID",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

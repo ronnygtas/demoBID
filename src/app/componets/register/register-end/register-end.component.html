@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding pading-30">
+    <h3 class="center">Registro finalizado<br>
+      <small>Inicia sesión de nuevo para continuar</small>
+    </h3>
+    <ion-button expand="block" color="primary" (click)="finalizar()">Finalizar</ion-button>
+  </div>
+</ion-content>

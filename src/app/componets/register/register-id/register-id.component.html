@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="head-logo" [src]="logout"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-loading></app-loading>
+  <div class="ion-padding">
+    <app-camera [name]="cameraNames" [file]="false" [mitek]="true" [buttonsPosition]="2" (onImage)="getImage($event)" (error)="cameraError($event)"></app-camera>
+    <ion-button expand="block" (click)="callOCR()">Continuar</ion-button>
+  </div>
+</ion-content>

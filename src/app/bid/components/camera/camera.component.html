@@ -1,0 +1,29 @@
+<div class="center" *ngFor="let img of image; let i = index">
+  <div id="algo" class="idof" [ngStyle]="{'height': baseHeight + 'vh', 'max-height': baseHeight + 'vh'}">
+    <ion-badge class="badge-icon" color="primary" mode="ios">{{ img.name }}</ion-badge>
+    <div class="actions" [ngClass]="cameraClass">
+      <ion-button class="button" [disabled]="loading" (click)="tomarFoto(i)" size="small" color="primary" *ngIf="!img.content">
+        <ion-icon name="camera"></ion-icon>
+      </ion-button>
+      <ion-button [disabled]="loading" (click)="delPhoto(i)" size="small" color="primary" *ngIf="img.content">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+      <ion-button [disabled]="loading" class="folder" size="small" color="primary" *ngIf="showInputfile">
+        <ion-icon name="folder"></ion-icon>
+      </ion-button>
+      <ion-input [disabled]="loading" id="select1" type="file" class="custom-file-input" (change)="listenerImg($event, i)" accept="image/jpeg,image/png" *ngIf="showInputfile"></ion-input>
+    </div>
+    <ion-card-content (click)="tomarFoto(i)" class="image-container" *ngIf="!img.content && imageAction">
+      <ion-icon class="image" [ngStyle]="{'height': (baseHeight - 5) + 'vh', 'font-size': (baseHeight - 10) + 'vh'}" name="camera"></ion-icon>
+    </ion-card-content>
+    <ion-card-content class="image-container" *ngIf="!img.content && !imageAction">
+      <ion-icon class="image" [ngStyle]="{'height': (baseHeight - 5) + 'vh', 'font-size': (baseHeight - 10) + 'vh'}" name="camera"></ion-icon>
+    </ion-card-content>
+    <ion-card-content class="image-container" *ngIf="img.content">
+      <ion-img class="image" [ngStyle]="{'height': (baseHeight - 5) + 'vh', 'font-size': (baseHeight - 10) + 'vh'}" [src]="img.content"></ion-img>
+    </ion-card-content>
+    <div class="message" *ngIf="messages">
+      <ion-badge color="primary" mode="ios" *ngIf="messages[i]">{{ messages[i] }}</ion-badge>
+    </div>
+  </div>
+</div>

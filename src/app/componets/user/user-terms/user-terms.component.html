@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-button (click)="back()">
+          <ion-icon slot="icon-only" color="tertiary" name="arrow-round-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+        <ion-img class="head-logo" [src]="logout"></ion-img>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-row>
+          <ion-col  size="12"><b>Términos y condiciones</b></ion-col>
+        </ion-row> 
+      <ion-row>
+        <ion-grid>
+          <div padding>
+            <table>
+              <tr (click)="clickAceptarAvisoPrivacidad1()">
+              <td class="space"><ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="checkP1" (ionChange)="aceptarAvisoPrivacidad()"></ion-checkbox></td>
+              <td class="space">Acepto la relación de amistad que iniciaré con BID a la firma de este contrato. </td>
+              </tr>
+
+              <tr (click)="clickAceptarAvisoPrivacidad2()">
+              <td class="space"><ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="checkP2" (ionChange)="aceptarAvisoPrivacidad()"></ion-checkbox></td>
+              <td class="space">Autorizo que BID me contacte al teléfono o correo que proporcioné para una invitación a cenar. </td>
+              </tr>
+
+              <tr (click)="clickAceptarAvisoPrivacidad3()">
+              <td class="space"><ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="checkP3" (ionChange)="aceptarAvisoPrivacidad()"></ion-checkbox></td>
+              <td class="space">Autorizo el Intercambio de Información con fines Publicitarios y de Mercadotecnia. </td>
+              </tr>
+
+              <tr (click)="clickAceptarAvisoPrivacidad4()">
+              <td class="space"><ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="checkP4" (ionChange)="aceptarAvisoPrivacidad()"></ion-checkbox></td>
+              <td class="space">Certifico que tomo conocimiento del Aviso de Privacidad de BID, el que me ha sido informado de forma amplia y completa, a mi entera satisfacción. </td>
+              </tr>
+
+              <tr (click)="clickAceptarAvisoPrivacidad5()">
+              <td class="space"><ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="checkP5" (ionChange)="aceptarAvisoPrivacidad()"></ion-checkbox></td>
+              <td class="space">Autorizo que se consulte mi reporte de crédito ante las sociedades de información crediticia. </td>
+              </tr>
+
+              <tr (click)="clickAceptarAvisoPrivacidad6()">
+              <td class="space"><ion-checkbox class="vertical_aling" color="primary" [(ngModel)]="checkP6" (ionChange)="aceptarAvisoPrivacidad()"></ion-checkbox></td>
+              <td class="space">Autorizo que mis datos sean utilizados para consulta con fuentes externas como INE y RENAPO. </td>
+              </tr>
+            
+
+            </table>
+            </div>
+          </ion-grid>
+      </ion-row>  
+      <ion-row>
+        </ion-row>
+  
+        
+  </ion-content>
+  <ion-footer>
+      <ion-toolbar>
+          <ion-button color="primary" class="color_button" expand="block" (click)="goUserOtp()" [disabled]="isValido">
+              <ion-ripple-effect></ion-ripple-effect>
+              Siguiente
+            </ion-button>
+      </ion-toolbar>
+    </ion-footer> 
